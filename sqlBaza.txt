@@ -1,0 +1,49 @@
+CREATE DATABASE Monopol;
+
+CREATE TABLE Pola (
+id_pola INT IDENTITY(0,1) PRIMARY KEY NOT NULL, 
+nazwa varchar(20) NOT NULL, 
+ilosc_domkow SMALLINT,
+koszt_usługi0 SMALLINT, 
+koszt_usługi1 SMALLINT,
+koszt_usługi2 SMALLINT,
+koszt_usługi3 SMALLINT,
+koszt_usługi4 SMALLINT,
+koszt_zakupu SMALLINT,
+koszt_domka SMALLINT,
+wlasciciel SMALLINT,
+typ_pola varchar(20),
+);
+
+CREATE TABLE Gra_01(
+id_gracza INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+nazwa varchar(20) NOT NULL, 
+hajs INT NOT NULL,
+aktualne_pole SMALLINT,
+tura_gracza SMALLINT,
+gracz_online SMALLINT
+);
+
+CREATE TABLE Rzut_kostka (
+id_rzutu INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+int wartosc SMALLINT
+);
+INSERT INTO Rzut_kostka (wartosc) VALUES (0);
+
+INSERT INTO Gra_01 (nazwa,hajs,aktualne_pole,tura_gracza,gracz_online) VALUES ('Daman',1100,0,1,1);
+INSERT INTO Gra_01 (nazwa,hajs,aktualne_pole,tura_gracza,gracz_online) VALUES ('Smok',1100,0,0,1);
+
+
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('START',0,0,0,0,0,0,0,0,0,'start');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Krakow',0,10,11,12,13,14,15,100,0,'dzialka');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Rzeszow',0,10,12,13,14,15,16,120,0,'dzialka');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Warszawa',0,10,15,16,17,18,19,150,0,'dzialka');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Wiezienie',0,0,0,0,0,0,0,0,0,'wiezienie');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Berlin',0,20,20,21,22,23,24,210,0,'dzialka');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Monachium',0,20,25,26,27,28,29,250,0,'dzialka');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Kolonia',0,20,29,30,31,35,40,270,0,'dzialka');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Idziesz_do_wiezeinia',0,0,0,0,0,0,0,0,0,'idziesz_do_wiezienia');
+INSERT INTO Pola (nazwa,ilosc_domkow,koszt_domka,koszt_usługi0,koszt_usługi1,koszt_usługi2,koszt_usługi3,koszt_usługi4,koszt_zakupu,wlasciciel,typ_pola) values ('Dla_odwiedzajacych',0,0,0,0,0,0,0,0,0,'dla_odwiedzajacych');
+
+Select*from Pola;
+
